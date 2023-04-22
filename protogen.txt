@@ -1,0 +1,2 @@
+protoc  \
+--proto_path=./pkg/snowflake-api --go_out=./pkg/snowflake-api --go-grpc_out=./pkg/snowflake-api snowflake.proto
