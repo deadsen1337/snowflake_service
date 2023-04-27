@@ -1,13 +1,13 @@
 package main
 
 import (
+	snowflake_api "github.com/deadsen1337/snowflake_api"
 	"google.golang.org/grpc"
 	"log"
 	"net"
 	"snowflake_service/internal/app/handlers"
 	"snowflake_service/internal/snowflake"
 	snowflake_service "snowflake_service/internal/snowflake-service"
-	snowflake_api_service "snowflake_service/pkg/snowflake-api"
 )
 
 func main() {
@@ -22,7 +22,7 @@ func main() {
 	opts := []grpc.ServerOption{}
 	grpcServer := grpc.NewServer(opts...)
 
-	snowflake_api_service.RegisterSnowflakeServiceServer(grpcServer, service)
+	snowflake_api.RegisterSnowflakeServiceServer(grpcServer, service)
 
 	log.Fatal(grpcServer.Serve(listener))
 }

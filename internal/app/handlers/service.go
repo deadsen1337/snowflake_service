@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"context"
-	snowflake_service "snowflake_service/pkg/snowflake-api"
+	snowflake_api "github.com/deadsen1337/snowflake_api"
 )
 
 type snowflakeService interface {
@@ -10,7 +10,7 @@ type snowflakeService interface {
 }
 
 type Implementation struct {
-	snowflake_service.UnimplementedSnowflakeServiceServer
+	snowflake_api.UnimplementedSnowflakeServiceServer
 	snowflakeService snowflakeService
 }
 
